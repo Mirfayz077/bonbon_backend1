@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 90" role="img" aria-label="wood plate">
+  <defs>
+    <linearGradient id="wood" x1="24" x2="210" y1="18" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8b4517"/>
+      <stop offset=".42" stop-color="#c47a2c"/>
+      <stop offset="1" stop-color="#6e3411"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="120" cy="54" rx="101" ry="26" fill="#6b3d2e" opacity=".17"/>
+  <ellipse cx="120" cy="42" rx="94" ry="31" fill="url(#wood)"/>
+  <ellipse cx="120" cy="37" rx="78" ry="20" fill="none" stroke="#f0b45b" stroke-opacity=".32" stroke-width="3"/>
+  <path d="M52 40c37 11 86 12 141-1" fill="none" stroke="#7a3812" stroke-opacity=".33" stroke-width="3" stroke-linecap="round"/>
+  <path d="M73 54c28 6 65 7 98-1" fill="none" stroke="#f1b265" stroke-opacity=".22" stroke-width="2" stroke-linecap="round"/>
+</svg>

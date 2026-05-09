@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 120" role="img" aria-label="leaf ornament">
+  <g fill="none" stroke="#d4a853" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 98C54 69 77 45 102 12" stroke-width="3"/>
+    <path d="M37 82c-13-7-19-18-18-33 15 2 26 10 32 24" fill="#d4a853" fill-opacity=".34" stroke-width="2"/>
+    <path d="M59 61c-11-8-15-19-11-33 14 5 23 14 27 28" fill="#d4a853" fill-opacity=".28" stroke-width="2"/>
+    <path d="M80 39c-7-11-7-22 0-34 12 8 18 19 17 32" fill="#d4a853" fill-opacity=".24" stroke-width="2"/>
+    <path d="M51 72c10 2 20 0 30-8" stroke-width="2"/>
+    <path d="M74 50c10 1 19-3 27-11" stroke-width="2"/>
+  </g>
+</svg>

@@ -19,4 +19,18 @@ class Controller extends BaseController
         // dd('menu');
         return view('menu.menu');
     }
+
+    public function qr_code($table = null)
+    {
+        $table = $table !== null ? trim((string) $table) : null;
+        $siteBaseUrl = 'https://bonbon.uz';
+        $telegramBotUrl = 'https://t.me/your_bot_username';
+
+        return view('qr.qr_code', [
+            'table' => $table,
+            'siteUrl' => $siteBaseUrl . ($table ? '?table=' . rawurlencode($table) : ''),
+            'botUrl' => $telegramBotUrl . ($table ? '?start=table_' . rawurlencode($table) : ''),
+            'qrValue' => $siteBaseUrl . '/qr' . ($table ? '/' . rawurlencode($table) : ''),
+        ]);
+    }
 }

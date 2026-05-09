@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [Controller::class, 'index'])->name('index');
 
 Route::get('/menu', [Controller::class, 'menu'])->name('menu');
+
+Route::get('/qr/{table?}', [Controller::class, 'qr_code'])->name('qr');
