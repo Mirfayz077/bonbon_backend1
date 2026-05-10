@@ -1,4 +1,6 @@
 @php
+    use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
     $siteUrl = $siteUrl ?? 'https://bonbon.uz';
     $botUrl = $botUrl ?? 'https://t.me/your_bot_username';
     $qrValue = $qrValue ?? route('qr');
@@ -68,207 +70,47 @@
                 url("{{ asset('images/paper-texture.svg') }}"),
                 radial-gradient(circle at 50% 44%, #fff4dc 0 8%, #ead0a6 72%);
             background-size: cover, 280px 280px, cover;
-            display: grid;
-            place-items: center;
-            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(12px, 2vh, 28px) 12px;
         }
 
-        .device {
+        @media (max-height: 1180px) {
+            body {
+                align-items: flex-start;
+            }
+        }
+
+        .qr-shell {
             width: min(96vw, 704px);
-            aspect-ratio: 704 / 1364;
-            min-height: 0;
             min-width: 0;
             position: relative;
-            border-radius: 72px;
-            padding: 19px;
-            background:
-                linear-gradient(135deg, #3a3b3c, #050505 19%, #1d1d1e 52%, #56585a);
-            box-shadow:
-                0 38px 90px rgba(52, 29, 13, .34),
-                0 8px 18px rgba(0, 0, 0, .25),
-                inset 0 0 0 2px rgba(255,255,255,.18);
         }
 
-        .device::before,
-        .device::after {
-            content: "";
-            position: absolute;
-            width: 4px;
-            border-radius: 5px;
-            background: linear-gradient(180deg, #222, #777, #1b1b1b);
-            box-shadow: inset 1px 0 rgba(255,255,255,.18);
-        }
-
-        .device::before {
-            left: -4px;
-            top: 216px;
-            height: 154px;
-        }
-
-        .device::after {
-            right: -4px;
-            top: 335px;
-            height: 146px;
-        }
-
-        .phone {
+        .qr-card {
             position: relative;
             width: 100%;
-            height: 100%;
             min-width: 0;
-            min-height: 724px;
+            min-height: 0;
             overflow: hidden;
-            border-radius: 56px;
+            border-radius: 46px;
             background:
                 linear-gradient(180deg, rgba(255,250,238,.86), rgba(255,245,222,.92)),
                 url("{{ asset('images/paper-texture.svg') }}");
             background-size: cover, 260px 260px;
+            border: 1px solid rgba(212, 168, 83, .26);
             box-shadow:
-                inset 0 0 0 2px rgba(255,255,255,.12),
-                inset 0 0 0 7px #050505;
-        }
-
-        .phone::before {
-            content: "";
-            position: absolute;
-            inset: 7px;
-            border-radius: 49px;
-            pointer-events: none;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
-            z-index: 30;
-        }
-
-        .island {
-            position: absolute;
-            z-index: 40;
-            top: 18px;
-            left: 50%;
-            width: 126px;
-            height: 38px;
-            transform: translateX(-50%);
-            border-radius: 24px;
-            background: #020202;
-            box-shadow: inset 0 1px 2px rgba(255,255,255,.08);
-        }
-
-        .island::after {
-            content: "";
-            position: absolute;
-            right: 18px;
-            top: 11px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background:
-                radial-gradient(circle at 35% 35%, rgba(45,98,141,.9) 0 13%, transparent 18%),
-                radial-gradient(circle, #112034 0 35%, #05070a 72%);
-        }
-
-        .status {
-            position: absolute;
-            z-index: 35;
-            top: 31px;
-            left: 69px;
-            right: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: #fff8ed;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: .01em;
-            text-shadow: 0 1px 4px rgba(91, 33, 8, .35);
-        }
-
-        .status-icons {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .signal {
-            display: flex;
-            align-items: end;
-            gap: 3px;
-            height: 16px;
-        }
-
-        .signal span {
-            display: block;
-            width: 4px;
-            border-radius: 4px;
-            background: #fff8ed;
-        }
-
-        .signal span:nth-child(1) { height: 6px; opacity: .68; }
-        .signal span:nth-child(2) { height: 9px; opacity: .82; }
-        .signal span:nth-child(3) { height: 12px; }
-        .signal span:nth-child(4) { height: 15px; }
-
-        .wifi {
-            width: 18px;
-            height: 14px;
-            position: relative;
-        }
-
-        .wifi::before,
-        .wifi::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            border: 2px solid #fff8ed;
-            border-bottom: 0;
-            border-left-color: transparent;
-            border-right-color: transparent;
-            transform: translateX(-50%);
-        }
-
-        .wifi::before {
-            width: 18px;
-            height: 10px;
-            top: 0;
-            border-radius: 18px 18px 0 0;
-        }
-
-        .wifi::after {
-            width: 10px;
-            height: 6px;
-            top: 6px;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .battery {
-            width: 27px;
-            height: 14px;
-            border: 2px solid #fff8ed;
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .battery::before {
-            content: "";
-            position: absolute;
-            right: -5px;
-            top: 3px;
-            width: 2px;
-            height: 6px;
-            border-radius: 0 2px 2px 0;
-            background: #fff8ed;
-        }
-
-        .battery::after {
-            content: "";
-            position: absolute;
-            inset: 2px;
-            border-radius: 2px;
-            background: #fff8ed;
+                0 34px 78px rgba(79, 45, 20, .22),
+                0 8px 20px rgba(104, 62, 28, .11),
+                inset 0 0 0 1px rgba(255,255,255,.42);
         }
 
         .header {
             position: relative;
             z-index: 2;
-            height: 270px;
-            padding: 88px 42px 0;
+            height: 250px;
+            padding: 44px 42px 0;
             text-align: center;
             color: #fff8e8;
             background:
@@ -298,8 +140,9 @@
             z-index: 2;
             width: 66px;
             height: 66px;
-            margin: -10px auto 6px;
+            margin: 0 auto 6px;
             display: block;
+            object-fit: contain;
             filter: drop-shadow(0 6px 10px rgba(72, 26, 8, .24));
         }
 
@@ -332,7 +175,7 @@
             position: relative;
             z-index: 4;
             min-width: 0;
-            min-height: calc(100% - 270px);
+            min-height: 0;
             padding: 31px 45px 22px;
         }
 
@@ -369,22 +212,24 @@
 
         .leaf {
             position: absolute;
-            width: 66px;
-            opacity: .58;
+            width: 82px;
+            opacity: .5;
             pointer-events: none;
+            filter: drop-shadow(0 8px 10px rgba(112, 75, 28, .08));
         }
 
         .leaf-right-top {
-            top: 292px;
-            right: 62px;
-            transform: rotate(32deg);
+            top: 286px;
+            right: 48px;
+            transform: rotate(20deg);
         }
 
         .leaf-right-mid {
-            top: 455px;
-            right: 138px;
-            width: 60px;
-            transform: rotate(15deg);
+            top: 430px;
+            right: 122px;
+            width: 72px;
+            opacity: .36;
+            transform: rotate(7deg) scaleX(-1);
         }
 
         .hero {
@@ -436,18 +281,18 @@
         .vase-img {
             position: absolute;
             z-index: 3;
-            left: 21px;
-            bottom: 86px;
-            width: 112px;
-            filter: drop-shadow(0 18px 13px rgba(71, 41, 20, .2));
+            left: 24px;
+            bottom: 88px;
+            width: 118px;
+            filter: drop-shadow(0 18px 13px rgba(71, 41, 20, .18));
         }
 
         .croissant-img {
             position: absolute;
             z-index: 6;
-            left: 20px;
-            bottom: 18px;
-            width: 225px;
+            left: 15px;
+            bottom: 30px;
+            width: 190px;
             transform: rotate(-2deg);
             filter: drop-shadow(0 15px 12px rgba(83, 44, 19, .25));
         }
@@ -713,6 +558,17 @@
             pointer-events: none;
         }
 
+        .arc-croissant {
+            position: absolute;
+            z-index: 4;
+            left: 50%;
+            bottom: 119px;
+            width: 86px;
+            transform: translateX(-50%) rotate(-2deg);
+            pointer-events: none;
+            filter: drop-shadow(0 9px 9px rgba(104, 62, 28, .16));
+        }
+
         .footer {
             position: relative;
             z-index: 5;
@@ -730,35 +586,22 @@
         }
 
         .footer-leaf {
-            width: 70px;
-            opacity: .78;
+            width: 82px;
+            opacity: .7;
         }
 
         .footer-leaf.left {
-            transform: rotate(-8deg);
+            transform: rotate(-10deg);
         }
 
         .footer-leaf.right {
-            transform: rotate(188deg) scaleX(-1);
+            transform: rotate(190deg) scaleX(-1);
         }
 
-        .footer-badge {
-            width: 74px;
+        .footer-center-space {
+            width: 86px;
             height: 74px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background:
-                radial-gradient(circle at 42% 35%, rgba(255,255,255,.9), rgba(255,249,236,.87) 55%, rgba(239,208,151,.88));
-            border: 1px solid rgba(212,168,83,.67);
-            box-shadow:
-                0 12px 18px rgba(94, 56, 22, .14),
-                inset 0 0 0 6px rgba(255,255,255,.48);
-        }
-
-        .footer-badge img {
-            width: 52px;
-            transform: rotate(4deg);
+            flex: 0 0 auto;
         }
 
         .footer-text {
@@ -785,7 +628,7 @@
                 background-size: cover, 260px 260px;
             }
 
-            .device {
+            .qr-shell {
                 width: 100vw;
                 max-width: 100vw;
                 min-width: 0;
@@ -800,21 +643,13 @@
                 box-shadow: none;
             }
 
-            .device::before,
-            .device::after {
-                display: none;
-            }
-
-            .phone {
+            .qr-card {
                 width: 100%;
                 min-width: 0;
                 min-height: 100vh;
                 border-radius: 0;
+                border: 0;
                 box-shadow: none;
-            }
-
-            .phone::before {
-                display: none;
             }
 
             .screen {
@@ -822,21 +657,9 @@
                 padding-right: 27px;
             }
 
-            .status {
-                left: 68px;
-                right: 24px;
-                font-size: 16px;
-            }
-
-            .status-icons {
-                gap: 6px;
-                transform: scale(.9);
-                transform-origin: right center;
-            }
-
             .header {
                 height: 190px;
-                padding-top: 70px;
+                padding-top: 28px;
                 border-bottom-left-radius: 52% 19%;
                 border-bottom-right-radius: 52% 19%;
             }
@@ -858,7 +681,7 @@
             }
 
             .screen {
-                min-height: calc(100% - 190px);
+                min-height: 0;
                 padding-top: 12px;
                 padding-bottom: 16px;
             }
@@ -869,11 +692,14 @@
 
             .leaf-right-top {
                 top: 205px;
+                right: 28px;
+                width: 64px;
             }
 
             .leaf-right-mid {
-                top: 307px;
-                right: 48px;
+                top: 296px;
+                right: 38px;
+                width: 54px;
             }
 
             .hero {
@@ -892,15 +718,15 @@
             }
 
             .vase-img {
-                left: -18px;
-                bottom: 49px;
-                width: 88px;
+                left: -10px;
+                bottom: 55px;
+                width: 76px;
             }
 
             .croissant-img {
-                left: -28px;
-                bottom: 22px;
-                width: 146px;
+                left: -8px;
+                bottom: 28px;
+                width: 112px;
             }
 
             .coffee-img {
@@ -1000,22 +826,23 @@
                 height: 118px;
             }
 
+            .arc-croissant {
+                bottom: 81px;
+                width: 58px;
+            }
+
             .footer-row {
                 height: 54px;
                 gap: 18px;
             }
 
             .footer-leaf {
-                width: 52px;
+                width: 58px;
             }
 
-            .footer-badge {
-                width: 54px;
+            .footer-center-space {
+                width: 58px;
                 height: 54px;
-            }
-
-            .footer-badge img {
-                width: 38px;
             }
 
             .footer-text {
@@ -1059,21 +886,10 @@
     </style>
 </head>
 <body>
-    <main class="device" aria-label="BonBon Cafe QR preview">
-        <section class="phone">
-            <div class="island" aria-hidden="true"></div>
-
-            <div class="status" aria-hidden="true">
-                <span>9:41</span>
-                <span class="status-icons">
-                    <span class="signal"><span></span><span></span><span></span><span></span></span>
-                    <span class="wifi"></span>
-                    <span class="battery"></span>
-                </span>
-            </div>
-
+    <main class="qr-shell" aria-label="BonBon Cafe QR sahifasi">
+        <section class="qr-card">
             <header class="header">
-                <img class="brand-mark" src="{{ asset('images/logo-bonbon.svg') }}" alt="">
+                <img class="brand-mark" src="{{ asset('images/bonbon-badge.png') }}" alt="">
                 <h1 class="brand">BonBon Cafe</h1>
                 <div class="tagline">&bull; PATISSERIE &amp; COFFEE &bull;</div>
             </header>
@@ -1083,6 +899,7 @@
             <img class="leaf leaf-right-mid" src="{{ asset('images/leaf.svg') }}" alt="">
 
             <div class="footer-arc" aria-hidden="true"></div>
+            <img class="arc-croissant" src="{{ asset('images/croissant-real.png') }}" alt="">
 
             <section class="screen">
                 <div class="hero">
@@ -1092,7 +909,7 @@
                     </div>
 
                     <img class="vase-img" src="{{ asset('images/vase-leaves.svg') }}" alt="">
-                    <img class="croissant-img" src="{{ asset('images/croissant.svg') }}" alt="">
+                    <img class="croissant-img" src="{{ asset('images/croissant-real.png') }}" alt="">
                     <img class="plate-img" src="{{ asset('images/wood-plate.svg') }}" alt="">
 
                     <div class="qr-tile">
@@ -1157,9 +974,7 @@
                 <footer class="footer">
                     <div class="footer-row">
                         <img class="footer-leaf left" src="{{ asset('images/leaf.svg') }}" alt="">
-                        <span class="footer-badge">
-                            <img src="{{ asset('images/croissant.svg') }}" alt="">
-                        </span>
+                        <span class="footer-center-space" aria-hidden="true"></span>
                         <img class="footer-leaf right" src="{{ asset('images/leaf.svg') }}" alt="">
                     </div>
                     <div class="footer-text">YAXSHI KUN - YAXSHI QAHVA - YAXSHI MOOD</div>

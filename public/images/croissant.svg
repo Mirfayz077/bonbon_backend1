@@ -1,37 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 170" role="img" aria-label="croissant">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 190" role="img" aria-label="croissant">
   <defs>
-    <linearGradient id="bread" x1="36" x2="260" y1="45" y2="137" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#8f3f12"/>
-      <stop offset=".2" stop-color="#e77f21"/>
-      <stop offset=".45" stop-color="#ffbd55"/>
-      <stop offset=".72" stop-color="#c86618"/>
-      <stop offset="1" stop-color="#7b310f"/>
+    <linearGradient id="crust" x1="35" x2="282" y1="50" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9c3d10"/>
+      <stop offset=".18" stop-color="#e2771b"/>
+      <stop offset=".42" stop-color="#ffb647"/>
+      <stop offset=".68" stop-color="#d86a17"/>
+      <stop offset="1" stop-color="#7b2f0c"/>
     </linearGradient>
-    <radialGradient id="shine" cx="47%" cy="28%" r="62%">
-      <stop offset="0" stop-color="#ffe1a2" stop-opacity=".8"/>
-      <stop offset=".45" stop-color="#f6a739" stop-opacity=".55"/>
-      <stop offset="1" stop-color="#7c300c" stop-opacity=".2"/>
+    <linearGradient id="lobeLight" x1="82" x2="204" y1="54" y2="144" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe0a3" stop-opacity=".95"/>
+      <stop offset=".48" stop-color="#f29a2b" stop-opacity=".86"/>
+      <stop offset="1" stop-color="#a84210" stop-opacity=".82"/>
+    </linearGradient>
+    <radialGradient id="warmGlow" cx="47%" cy="27%" r="74%">
+      <stop offset="0" stop-color="#fff0bd" stop-opacity=".65"/>
+      <stop offset=".42" stop-color="#f49a27" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#7a2c0a" stop-opacity=".08"/>
     </radialGradient>
-    <filter id="crumbShadow" x="-15%" y="-20%" width="130%" height="145%">
-      <feDropShadow dx="0" dy="12" stdDeviation="9" flood-color="#5d2d18" flood-opacity=".25"/>
+    <filter id="croissantShadow" x="-16%" y="-22%" width="135%" height="150%">
+      <feDropShadow dx="0" dy="13" stdDeviation="9" flood-color="#5b2c18" flood-opacity=".24"/>
     </filter>
   </defs>
-  <ellipse cx="155" cy="148" rx="112" ry="13" fill="#6b3d2e" opacity=".13"/>
-  <path d="M29 119c22-58 77-97 129-96 55 1 106 41 124 97-32-22-56-28-84-24-18 3-31 13-42 25-11-12-24-22-43-25-27-4-51 3-84 23Z" fill="url(#bread)" filter="url(#crumbShadow)"/>
-  <path d="M61 109c18-38 50-63 87-68 14 16 20 38 17 69-28-26-60-25-104-1Z" fill="url(#shine)" opacity=".95"/>
-  <path d="M127 103c3-37 14-61 32-76 23 13 37 40 41 78-29-20-48-20-73-2Z" fill="url(#shine)" opacity=".92"/>
-  <path d="M193 108c-4-30 1-52 16-68 31 11 54 36 66 69-39-21-60-23-82-1Z" fill="url(#shine)" opacity=".88"/>
-  <path d="M42 119c-12 10-23 13-34 8 8-17 23-29 46-37" fill="#b45415"/>
-  <path d="M267 91c22 8 36 21 43 38-12 4-24 1-36-9" fill="#a34814"/>
-  <g fill="none" stroke="#fff0b7" stroke-linecap="round" stroke-width="5" opacity=".45">
-    <path d="M79 93c20-23 42-36 66-39"/>
-    <path d="M149 86c8-22 19-37 34-45"/>
-    <path d="M202 91c15-16 33-25 53-27"/>
+
+  <ellipse cx="157" cy="158" rx="110" ry="13" fill="#6b3d2e" opacity=".13"/>
+
+  <g filter="url(#croissantShadow)">
+    <path d="M16 135c24-55 79-90 138-90 63 0 119 36 150 91-26-13-52-17-77-10-24 7-43 22-61 42-16-19-36-34-63-40-28-6-58 0-87 22-3-6-3-10 0-15Z" fill="url(#crust)"/>
+    <path d="M21 135c-10 11-17 15-21 13 9-23 27-41 55-54-2 20-13 34-34 41Z" fill="#c95813"/>
+    <path d="M265 95c27 10 45 28 55 53-9 3-23-2-42-17-15-10-19-23-13-36Z" fill="#a94612"/>
+
+    <path d="M50 125c17-38 49-63 93-74 15 17 21 42 18 75-34-20-70-20-111-1Z" fill="url(#lobeLight)" opacity=".96"/>
+    <path d="M119 123c5-38 18-63 41-76 24 16 37 42 41 78-29-17-56-18-82-2Z" fill="url(#lobeLight)" opacity=".96"/>
+    <path d="M190 126c-5-32 3-57 22-74 33 10 58 34 76 73-39-19-71-19-98 1Z" fill="url(#lobeLight)" opacity=".92"/>
+    <path d="M16 135c24-55 79-90 138-90 63 0 119 36 150 91-26-13-52-17-77-10-24 7-43 22-61 42-16-19-36-34-63-40-28-6-58 0-87 22-3-6-3-10 0-15Z" fill="url(#warmGlow)"/>
+
+    <g fill="none" stroke="#fff0bd" stroke-linecap="round" opacity=".58">
+      <path d="M72 105c18-24 41-39 70-45" stroke-width="5"/>
+      <path d="M142 94c8-23 21-39 40-48" stroke-width="4.5"/>
+      <path d="M210 100c15-17 34-26 57-27" stroke-width="4.5"/>
+      <path d="M92 80c19-13 37-20 53-21" stroke-width="2.4" opacity=".55"/>
+      <path d="M177 66c18 8 29 22 34 43" stroke-width="2.4" opacity=".4"/>
+    </g>
   </g>
-  <g fill="#9a4615" opacity=".5">
-    <circle cx="107" cy="123" r="4"/>
-    <circle cx="133" cy="130" r="3"/>
-    <circle cx="218" cy="124" r="4"/>
-    <circle cx="237" cy="111" r="3"/>
+
+  <g fill="#9a4615" opacity=".55">
+    <circle cx="103" cy="139" r="3.4"/>
+    <circle cx="129" cy="146" r="2.8"/>
+    <circle cx="217" cy="140" r="3.5"/>
+    <circle cx="241" cy="126" r="2.8"/>
+    <circle cx="72" cy="135" r="2.5"/>
   </g>
 </svg>
