@@ -454,7 +454,7 @@ body,html{background:transparent;}
     <div class="planet" id="p5">
       <div class="planet-inner">
         <i class="ti ti-star" aria-hidden="true"></i>
-        <span class="planet-lbl">Reviews</span>
+        <span class="planet-lbl">Отзывы гостей</span>
       </div>
     </div>
   </div>
@@ -470,7 +470,7 @@ body,html{background:transparent;}
     <span class="h1-line1">Cafe</span>
     <span class="h1-line2">BonBon</span>
   </h1>
-  <p class="hero-sub">Premium European experience in Bukhara</p>
+  <p class="hero-sub">Добро пожаловать в BonBon</p>
   <div class="hero-btns">
     <button class="hbtn hbtn-p"><i class="ti ti-book-2" aria-hidden="true"></i>Explore Menu</button>
     <button class="hbtn hbtn-o"><i class="ti ti-map-pin" aria-hidden="true"></i>Find Location</button>
@@ -490,18 +490,24 @@ body,html{background:transparent;}
   <div class="about-grid">
     <div class="acard fade-in">
       <div class="acard-icon"><i class="ti ti-building-store" aria-hidden="true"></i></div>
-      <div class="acard-title">Who we are</div>
-      <p class="acard-text">BonBon — Buxoroning qalbida tug'ilgan zamonaviy evropa uslubidagi kafe. 2019-yildan beri biz ajoyib qahva, yangi pishirilgan shirinliklar va iliq muhitni bir joyda birlashtirdik.</p>
+      <div class="acard-title">Кто мы</div>
+      <p class="acard-text">    BonBon — современное кафе европейского стиля, рожденное в самом сердце Бухары.
+        С 2019 года мы создаём пространство, где ароматный кофе, свежая выпечка
+        и тёплая атмосфера объединяются в единое особенное настроение.</p>
     </div>
     <div class="acard fade-in">
       <div class="acard-icon"><i class="ti ti-leaf" aria-hidden="true"></i></div>
-      <div class="acard-title">Falsafamiz</div>
-      <p class="acard-text">Har bir chashka diqqat bilan tanlangan, qovurilgan va tayyorlangan. Har bir desert yangi tayyorlanadi. Sekin ertalab va sifatli detallar hayotni boyitadi deb ishonimiz.</p>
+      <div class="acard-title">Наша философия</div>
+      <p class="acard-text">        Каждая чашка кофе тщательно отбирается, обжаривается и готовится с вниманием к деталям.
+        Каждый десерт создаётся свежим каждый день.
+        Мы верим, что спокойные утренние моменты и качество в мелочах делают жизнь прекраснее.</p>
     </div>
     <div class="acard fade-in">
       <div class="acard-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
-      <div class="acard-title">Tan olinish</div>
-      <p class="acard-text">TripAdvisor, Yandex Maps va Google'da Buxorodagi eng yaxshi kafeler orasida. Mehmonlarimiz bu joyni o'zlarining ikkinchi uyi deb ataydi.</p>
+      <div class="acard-title">Признание гостей</div>
+      <p class="acard-text">BonBon входит в число любимых кафе Бухары на TripAdvisor, Yandex Maps и Google.
+        Наши гости называют это место своим вторым домом,
+        куда хочется возвращаться снова и снова.</p>
     </div>
   </div>
 </section>
@@ -511,8 +517,8 @@ body,html{background:transparent;}
 
 <!-- LOCATIONS -->
 <section class="section fade-in" id="locSec">
-  <div class="sec-eyebrow">Find Us</div>
-  <div class="sec-title">Our Locations</div>
+  <div class="sec-eyebrow">Наши локации</div>
+  <div class="sec-title">Где нас найти</div>
 
   <div class="loc-card fade-in">
     <div class="loc-head">
