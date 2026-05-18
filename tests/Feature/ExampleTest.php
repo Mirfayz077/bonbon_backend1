@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -12,9 +11,23 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testHomePageOpens()
     {
         $response = $this->get('/');
+
+        $response->assertStatus(200);
+    }
+
+    public function testMenuPageOpens()
+    {
+        $response = $this->get('/menu');
+
+        $response->assertStatus(200);
+    }
+
+    public function testQrPageOpens()
+    {
+        $response = $this->get('/qr/12');
 
         $response->assertStatus(200);
     }

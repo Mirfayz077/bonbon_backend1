@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('admin.bonbon');
 // });
 
-Route::get('/', [Controller::class, 'index'])->name('index');
+Route::get('/', [PageController::class, 'index'])->name('index');
 
-Route::get('/menu', [Controller::class, 'menu'])->name('menu');
+Route::get('/menu', [PageController::class, 'menu'])->name('menu');
 
-Route::get('/qr/{table?}', [Controller::class, 'qr_code'])->name('qr');
+Route::get('/qr/{table?}', [PageController::class, 'qrCode'])->name('qr');
