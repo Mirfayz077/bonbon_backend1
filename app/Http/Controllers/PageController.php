@@ -21,7 +21,7 @@ class PageController extends Controller
         return view('qr.qr_code', [
             'table' => $table,
             'siteUrl' => route('index'),
-            'botUrl' => 'https://t.me/your_bot_username' . ($table ? '?start=table_' . rawurlencode($table) : ''),
+            'botUrl' => 'https://t.me/bonbon_uz_bot' . ($table ? '?start=table_' . rawurlencode($table) : ''),
             'qrValue' => route('qr', ['table' => $table]),
         ]);
     }
