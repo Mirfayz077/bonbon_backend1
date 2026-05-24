@@ -451,10 +451,15 @@ footer{border-top:0.5px solid rgba(0,0,0,0.15);padding:48px 20px 32px;position:r
       <svg class="btn-icon" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="6" y1="11" x2="11" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       Посмотреть меню
     </button>
-    <button class="hbtn hbtn-o">
-      <svg class="btn-icon" viewBox="0 0 20 20" fill="none"><path d="M10 2C7.24 2 5 4.24 5 7C5 10.75 10 18 10 18C10 18 15 10.75 15 7C15 4.24 12.76 2 10 2ZM10 9C8.9 9 8 8.1 8 7C8 5.9 8.9 5 10 5C11.1 5 12 5.9 12 7C12 8.1 11.1 9 10 9Z" fill="currentColor"/></svg>
-      Найти нас
-    </button>
+<button class="hbtn hbtn-o"
+onclick="window.open('https://www.google.com/maps/place/Bon+Bon+Caf%C3%A9+%26+Pastry/@39.7722218,64.4278325,18z/data=!4m10!1m2!2m1!1z0JHQvtC9INCR0L7QvSA!3m6!1s0x3f500607e2684b0f:0xa350171fc6ea1b0f!8m2!3d39.7720814!4d64.4309303!15sCg3QkdC-0L0g0JHQvtC9Wg8iDdCx0L7QvSDQsdC-0L2SAQRjYWZl4AEA!16s%2Fg%2F11fxc1q377?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D','_blank')">
+
+  <svg class="btn-icon" viewBox="0 0 20 20" fill="none">
+    <path d="M10 2C7.24 2 5 4.24 5 7C5 10.75 10 18 10 18C10 18 15 10.75 15 7C15 4.24 12.76 2 10 2ZM10 9C8.9 9 8 8.1 8 7C8 5.9 8.9 5 10 5C11.1 5 12 5.9 12 7C12 8.1 11.1 9 10 9Z" fill="currentColor"/>
+  </svg>
+
+  Найти нас
+</button>
   </div>
 </div>
 
