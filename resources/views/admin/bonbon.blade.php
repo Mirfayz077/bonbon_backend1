@@ -1,6 +1,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css');
 
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -246,6 +247,7 @@ body,html{background:transparent;}
   font-size:11px;font-weight:500;cursor:pointer;
   background:rgba(255,255,255,0.02);color:var(--muted);
   transition:all 0.18s;display:flex;align-items:center;gap:4px;
+  text-decoration:none;
 }
 .tag:hover{background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.35);color:var(--gold);}
 .tag i{font-size:12px;}
@@ -291,6 +293,7 @@ body,html{background:transparent;}
   font-family:'Inter',sans-serif;
   transition:background 0.2s,transform 0.2s;
   position:relative;z-index:2;
+  text-decoration:none;
 }
 .call-btn:hover{background:var(--or2);transform:translateY(-1px);}
 .call-hours{font-size:11px;color:rgba(253,246,236,0.22);margin-top:10px;position:relative;z-index:2;}
@@ -301,6 +304,7 @@ body,html{background:transparent;}
   flex:1;display:flex;align-items:center;justify-content:center;gap:6px;
   padding:11px 8px;border-radius:11px;font-size:12px;font-weight:500;
   cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.18s;border:0.5px solid;
+  text-decoration:none;
 }
 .sbtn-wa{background:rgba(37,211,102,0.06);border-color:rgba(37,211,102,0.18);color:rgba(37,211,102,0.7);}
 .sbtn-wa:hover{background:rgba(37,211,102,0.14);border-color:rgba(37,211,102,0.4);color:#25D366;}
@@ -312,6 +316,7 @@ body,html{background:transparent;}
 
 /* === MAP VISUAL === */
 .map-vis{
+  display:block;
   margin-top:14px;
   height:150px;
   border-radius:14px;
@@ -319,6 +324,7 @@ body,html{background:transparent;}
   background:rgba(255,255,255,0.02);
   position:relative;overflow:hidden;cursor:pointer;
   transition:border-color 0.25s;
+  text-decoration:none;
 }
 .map-vis:hover{border-color:rgba(201,168,76,0.3);}
 .map-pin-center{
@@ -362,10 +368,11 @@ body,html{background:transparent;}
   display:flex;align-items:center;justify-content:center;
   color:rgba(253,246,236,0.25);font-size:14px;
   cursor:pointer;transition:all 0.18s;
+  text-decoration:none;
 }
 .f-soc-a:hover{background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.28);color:var(--gold);}
 .f-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;}
-.f-link{font-size:12px;color:rgba(253,246,236,0.3);cursor:pointer;transition:color 0.18s;}
+.f-link{font-size:12px;color:rgba(253,246,236,0.3);cursor:pointer;transition:color 0.18s;text-decoration:none;}
 .f-link:hover{color:var(--gold);}
 .f-copy{font-size:10px;color:rgba(253,246,236,0.15);letter-spacing:0.06em;}
 
@@ -421,42 +428,42 @@ body,html{background:transparent;}
     <div class="center-logo">BB</div>
 
     <!-- Planet icons: positioned by JS -->
-    <a class="planet" id="p0" href="https://yandex.uz/maps" target="_blank" style="--angle:0deg">
+    <a class="planet" id="p0" href="https://yandex.uz/maps/?text=Bon%20Bon%20Cafe%20Bukhara" target="_blank" rel="noopener" style="--angle:0deg">
       <div class="planet-inner">
         <svg width="18" height="18" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" fill="#FC3F1D"/><path d="M15.2 6H12.5C10.1 6 8.5 7.4 8.5 9.5C8.5 11.3 9.5 12.4 11.3 13.6L8 20H10.5L13.6 14.1H14.6V20H16.9V6H15.2ZM14.6 12.1H13.4C11.9 12.1 11.0 11.2 11.0 9.6C11.0 8.0 11.9 7.2 13.5 7.2H14.6V12.1Z" fill="white"/></svg>
         <span class="planet-lbl">Yandex</span>
       </div>
     </a>
-    <a class="planet" id="p1" href="https://maps.google.com" target="_blank">
+    <a class="planet" id="p1" href="https://www.google.com/maps/search/?api=1&query=Bon%20Bon%20Cafe%20Bukhara" target="_blank" rel="noopener">
       <div class="planet-inner">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#4285F4"/></svg>
         <span class="planet-lbl">Google</span>
       </div>
     </a>
-    <a class="planet" id="p2" href="https://2gis.uz" target="_blank">
+    <a class="planet" id="p2" href="https://2gis.uz/bukhara/firm/70000001083516500" target="_blank" rel="noopener">
       <div class="planet-inner">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#1C7ECF"/><text x="12" y="15.5" text-anchor="middle" font-family="Arial" font-weight="900" font-size="7.5" fill="white">2GIS</text></svg>
         <span class="planet-lbl">2GIS</span>
       </div>
     </a>
-    <a class="planet" id="p3" href="https://tripadvisor.com" target="_blank">
+    <a class="planet" id="p3" href="https://www.tripadvisor.com/Restaurant_Review-g303936-d19139820-Reviews-Bon_Bon-Bukhara_Bukhara_Province.html" target="_blank" rel="noopener">
       <div class="planet-inner">
         <svg width="18" height="18" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" fill="#00AA6C"/><circle cx="9" cy="13" r="3" fill="white"/><circle cx="17" cy="13" r="3" fill="white"/><circle cx="9" cy="13" r="1.2" fill="#00AA6C"/><circle cx="17" cy="13" r="1.2" fill="#00AA6C"/><path d="M5 10.5C6.5 8.5 9 7.5 9 7.5H17C17 7.5 19.5 8.5 21 10.5" stroke="white" stroke-width="1.5" fill="none"/></svg>
         <span class="planet-lbl">TripAdvisor</span>
       </div>
     </a>
-    <div class="planet" id="p4">
+    <a class="planet" id="p4" href="{{ route('menu') }}">
       <div class="planet-inner">
         <i class="ti ti-layout-grid" aria-hidden="true"></i>
         <span class="planet-lbl">Menu</span>
       </div>
-    </div>
-    <div class="planet" id="p5">
+    </a>
+    <a class="planet" id="p5" href="https://www.tripadvisor.com/Restaurant_Review-g303936-d19139820-Reviews-Bon_Bon-Bukhara_Bukhara_Province.html#REVIEWS" target="_blank" rel="noopener">
       <div class="planet-inner">
         <i class="ti ti-star" aria-hidden="true"></i>
-        <span class="planet-lbl">Отзывы гостей</span>
+        <span class="planet-lbl">Reviews</span>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -470,10 +477,10 @@ body,html{background:transparent;}
     <span class="h1-line1">Cafe</span>
     <span class="h1-line2">BonBon</span>
   </h1>
-  <p class="hero-sub">Добро пожаловать в BonBon</p>
+  <p class="hero-sub">Xush kelibsiz BonBon Cafe</p>
   <div class="hero-btns">
-    <button class="hbtn hbtn-p"><i class="ti ti-book-2" aria-hidden="true"></i>Explore Menu</button>
-    <button class="hbtn hbtn-o"><i class="ti ti-map-pin" aria-hidden="true"></i>Find Location</button>
+    <a class="hbtn hbtn-p" href="{{ route('menu') }}"><i class="ti ti-book-2" aria-hidden="true"></i>Menu</a>
+    <a class="hbtn hbtn-o" href="#locSec"><i class="ti ti-map-pin" aria-hidden="true"></i>Manzil</a>
   </div>
   <div class="typing" style="margin-top:16px">
     <div class="tdot"></div><div class="tdot"></div><div class="tdot"></div>
@@ -517,26 +524,26 @@ body,html{background:transparent;}
 
 <!-- LOCATIONS -->
 <section class="section fade-in" id="locSec">
-  <div class="sec-eyebrow">Наши локации</div>
-  <div class="sec-title">Где нас найти</div>
+  <div class="sec-eyebrow">Manzillar</div>
+  <div class="sec-title">Bizni qayerdan topasiz</div>
 
   <div class="loc-card fade-in">
     <div class="loc-head">
       <div class="loc-badge"><i class="ti ti-building-store" aria-hidden="true"></i></div>
       <div>
-        <div class="loc-name">BonBon Central</div>
-        <div class="loc-addr">12 Lyabi Hauz Square, Old City, Bukhara</div>
+        <div class="loc-name">BonBon Islom Karimov</div>
+        <div class="loc-addr">Islom Karimov ko'chasi, 2, Buxoro</div>
       </div>
     </div>
     <div class="loc-meta">
-      <div class="loc-m"><i class="ti ti-clock" aria-hidden="true"></i><span>09:00 – 23:00</span></div>
-      <div class="loc-m"><i class="ti ti-phone" aria-hidden="true"></i><span>+998 65 221 0011</span></div>
+      <div class="loc-m"><i class="ti ti-clock" aria-hidden="true"></i><span>08:00 - 23:00</span></div>
+      <div class="loc-m"><i class="ti ti-phone" aria-hidden="true"></i><span>+998 97 300 45 68</span></div>
     </div>
     <div class="loc-tags">
-      <div class="tag"><i class="ti ti-brand-google" aria-hidden="true"></i>Google</div>
-      <div class="tag"><i class="ti ti-map" aria-hidden="true"></i>Yandex</div>
-      <div class="tag"><i class="ti ti-map-2" aria-hidden="true"></i>2GIS</div>
-      <div class="tag"><i class="ti ti-star" aria-hidden="true"></i>Trip</div>
+      <a class="tag" href="https://www.google.com/maps/search/?api=1&query=Bon%20Bon%20Cafe%20Bukhara" target="_blank" rel="noopener"><i class="ti ti-brand-google" aria-hidden="true"></i>Google</a>
+      <a class="tag" href="https://yandex.uz/maps/?text=Bon%20Bon%20Cafe%20Bukhara" target="_blank" rel="noopener"><i class="ti ti-map" aria-hidden="true"></i>Yandex</a>
+      <a class="tag" href="https://2gis.uz/bukhara/firm/70000001083516500" target="_blank" rel="noopener"><i class="ti ti-map-2" aria-hidden="true"></i>2GIS</a>
+      <a class="tag" href="https://www.tripadvisor.com/Restaurant_Review-g303936-d19139820-Reviews-Bon_Bon-Bukhara_Bukhara_Province.html" target="_blank" rel="noopener"><i class="ti ti-star" aria-hidden="true"></i>Trip</a>
     </div>
   </div>
 
@@ -544,23 +551,23 @@ body,html{background:transparent;}
     <div class="loc-head">
       <div class="loc-badge" style="background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.15);color:var(--gold)"><i class="ti ti-building-store" aria-hidden="true"></i></div>
       <div>
-        <div class="loc-name">BonBon Ark</div>
-        <div class="loc-addr">7 Ark Fortress Road, Bukhara</div>
+        <div class="loc-name">BonBon Buxoro filiallari</div>
+        <div class="loc-addr">Buxoro shahri bo'ylab bir nechta filiallar</div>
       </div>
     </div>
     <div class="loc-meta">
-      <div class="loc-m"><i class="ti ti-clock" aria-hidden="true"></i><span>08:00 – 22:00</span></div>
-      <div class="loc-m"><i class="ti ti-phone" aria-hidden="true"></i><span>+998 65 221 0022</span></div>
+      <div class="loc-m"><i class="ti ti-clock" aria-hidden="true"></i><span>Filialga qarab farq qiladi</span></div>
+      <div class="loc-m"><i class="ti ti-phone" aria-hidden="true"></i><span>+998 93 383 11 33</span></div>
     </div>
     <div class="loc-tags">
-      <div class="tag"><i class="ti ti-brand-google" aria-hidden="true"></i>Google</div>
-      <div class="tag"><i class="ti ti-map" aria-hidden="true"></i>Yandex</div>
-      <div class="tag"><i class="ti ti-map-2" aria-hidden="true"></i>2GIS</div>
-      <div class="tag"><i class="ti ti-star" aria-hidden="true"></i>Trip</div>
+      <a class="tag" href="https://www.google.com/maps/search/?api=1&query=Bon%20Bon%20Bukhara" target="_blank" rel="noopener"><i class="ti ti-brand-google" aria-hidden="true"></i>Google</a>
+      <a class="tag" href="https://yandex.uz/maps/?text=Bon%20Bon%20Bukhara" target="_blank" rel="noopener"><i class="ti ti-map" aria-hidden="true"></i>Yandex</a>
+      <a class="tag" href="https://2gis.uz/bukhara/search/Bon%20Bon" target="_blank" rel="noopener"><i class="ti ti-map-2" aria-hidden="true"></i>2GIS</a>
+      <a class="tag" href="https://www.tripadvisor.com/Restaurant_Review-g303936-d19139820-Reviews-Bon_Bon-Bukhara_Bukhara_Province.html" target="_blank" rel="noopener"><i class="ti ti-star" aria-hidden="true"></i>Trip</a>
     </div>
   </div>
 
-  <div class="map-vis fade-in">
+  <a class="map-vis fade-in" href="https://2gis.uz/bukhara/firm/70000001083516500" target="_blank" rel="noopener" aria-label="Open BonBon on 2GIS map">
     <svg style="position:absolute;inset:0;width:100%;height:100%" viewBox="0 0 400 150" preserveAspectRatio="none" aria-hidden="true">
       <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
       <line x1="0" y1="60" x2="400" y2="60" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
@@ -574,10 +581,10 @@ body,html{background:transparent;}
       <circle cx="200" cy="75" r="6" fill="rgba(200,98,10,0.4)" stroke="rgba(200,98,10,0.6)" stroke-width="1"/>
       <circle cx="200" cy="75" r="14" fill="rgba(200,98,10,0.08)" stroke="rgba(200,98,10,0.15)" stroke-width="0.5"/>
     </svg>
-    <div class="map-pin-center">📍</div>
+    <div class="map-pin-center"><i class="ti ti-map-pin-filled" aria-hidden="true"></i></div>
     <div class="map-city">Bukhara, Uzbekistan</div>
     <div class="map-hint-txt">Tap to open map</div>
-  </div>
+  </a>
 </section>
 
 <!-- DIVIDER -->
@@ -590,36 +597,36 @@ body,html{background:transparent;}
   <div class="call-card">
     <div class="call-ring1"></div>
     <div class="call-ring2"></div>
-    <div class="call-lbl">We're always here for you</div>
-    <div class="call-num">+998 65 221 00 00</div>
-    <button class="call-btn"><i class="ti ti-phone" aria-hidden="true"></i>Call Now</button>
-    <div class="call-hours">Open 09:00 – 23:00 · Every day</div>
+    <div class="call-lbl">Buyurtma va savollar uchun</div>
+    <div class="call-num">+998 97 300 45 68</div>
+    <a class="call-btn" href="tel:+998973004568"><i class="ti ti-phone" aria-hidden="true"></i>Qo'ng'iroq qilish</a>
+    <div class="call-hours">Har kuni 08:00 - 23:00</div>
   </div>
   <div class="social-row">
-    <button class="sbtn sbtn-wa"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp</button>
-    <button class="sbtn sbtn-tg"><i class="ti ti-brand-telegram" aria-hidden="true"></i>Telegram</button>
-    <button class="sbtn sbtn-ig"><i class="ti ti-brand-instagram" aria-hidden="true"></i>Instagram</button>
+    <a class="sbtn sbtn-wa" href="https://wa.me/998973004568" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i>WhatsApp</a>
+    <a class="sbtn sbtn-tg" href="https://t.me/Bon_Bon_Bukhara" target="_blank" rel="noopener"><i class="ti ti-brand-telegram" aria-hidden="true"></i>Telegram</a>
+    <a class="sbtn sbtn-ig" href="https://www.instagram.com/bistro_by_bonbon/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram" aria-hidden="true"></i>Instagram</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer fade-in">
   <div class="f-logo">BONBON</div>
-  <p class="f-tag">European café experience<br>in the heart of Bukhara.</p>
+  <p class="f-tag">European cafe experience<br>in the heart of Bukhara.</p>
   <div class="f-social">
-    <div class="f-soc-a"><i class="ti ti-brand-instagram" aria-hidden="true"></i></div>
-    <div class="f-soc-a"><i class="ti ti-brand-telegram" aria-hidden="true"></i></div>
-    <div class="f-soc-a"><i class="ti ti-star" aria-hidden="true"></i></div>
-    <div class="f-soc-a"><i class="ti ti-map-2" aria-hidden="true"></i></div>
+    <a class="f-soc-a" href="https://www.instagram.com/bistro_by_bonbon/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ti ti-brand-instagram" aria-hidden="true"></i></a>
+    <a class="f-soc-a" href="https://t.me/Bon_Bon_Bukhara" target="_blank" rel="noopener" aria-label="Telegram"><i class="ti ti-brand-telegram" aria-hidden="true"></i></a>
+    <a class="f-soc-a" href="https://www.tripadvisor.com/Restaurant_Review-g303936-d19139820-Reviews-Bon_Bon-Bukhara_Bukhara_Province.html" target="_blank" rel="noopener" aria-label="Reviews"><i class="ti ti-star" aria-hidden="true"></i></a>
+    <a class="f-soc-a" href="https://2gis.uz/bukhara/firm/70000001083516500" target="_blank" rel="noopener" aria-label="2GIS map"><i class="ti ti-map-2" aria-hidden="true"></i></a>
   </div>
   <div class="f-links">
-    <span class="f-link">About</span>
-    <span class="f-link">Locations</span>
-    <span class="f-link">Contact</span>
-    <span class="f-link">Menu</span>
-    <span class="f-link">Reserve</span>
+    <a class="f-link" href="#aboutSec">About</a>
+    <a class="f-link" href="#locSec">Locations</a>
+    <a class="f-link" href="#callSec">Contact</a>
+    <a class="f-link" href="{{ route('menu') }}">Menu</a>
+    <a class="f-link" href="tel:+998973004568">Reserve</a>
   </div>
-  <div class="f-copy">© 2025 Cafe BonBon · Bukhara</div>
+  <div class="f-copy">&copy; 2026 Cafe BonBon - Bukhara</div>
 </footer>
 
 </div><!-- end content -->
@@ -731,12 +738,22 @@ setTimeout(placePlanets, 50);
     let raf;
     function tick(time){
       const dy=Math.sin(time*0.001+phase)*4;
-      p.style.transform=`translateY(${dy}px)`;
+      p.style.transform=p.matches(':hover') ? `translateY(${dy}px) scale(1.12)` : `translateY(${dy}px)`;
       raf=requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
   });
 })();
+
+// === SMOOTH INTERNAL LINKS ===
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click', e=>{
+    const target = document.querySelector(link.getAttribute('href'));
+    if(!target) return;
+    e.preventDefault();
+    target.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
 
 // === SCROLL FADE IN ===
 const observer = new IntersectionObserver(entries=>{

@@ -154,7 +154,7 @@
       const allImages = [...baseImages, ...langImages[lang]];
       allImages.forEach(img => {
         const el = document.createElement("img");
-        el.src = `menyu/${img}`;
+        el.src = `{{ asset('menyu') }}/${img}`;
         el.onclick = () => {
           modal.style.display = "flex";
           modalImg.src = el.src;
@@ -174,6 +174,13 @@
     // Modal yopish
     modal.addEventListener("click", function (e) {
       if (e.target === modal || e.target.classList.contains("close-btn")) {
+        e.preventDefault();
+        modal.style.display = "none";
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
         modal.style.display = "none";
       }
     });
