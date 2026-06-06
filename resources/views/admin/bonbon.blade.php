@@ -1080,7 +1080,7 @@
             position: relative;
             z-index: 2;
             display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
             gap: 28px;
             align-items: stretch;
             margin-top: 42px;
@@ -1088,17 +1088,41 @@
         }
 
         .contact-intro {
+            position: relative;
             display: grid;
             align-content: center;
+            min-width: 0;
             min-height: 245px;
-            padding-left: 32px;
+            overflow: hidden;
+            padding: 34px 34px 34px 38px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
             background:
-                linear-gradient(90deg, rgba(255, 250, 242, 0.86), rgba(255, 250, 242, 0.4)),
-                url("{{ asset('images/bonbon/branch-front.png') }}") left bottom / 360px auto no-repeat;
+                linear-gradient(90deg, rgba(255, 250, 242, 0.96), rgba(255, 250, 242, 0.78)),
+                url("{{ asset('images/bonbon/branch-front.png') }}") center / cover no-repeat;
+            box-shadow: var(--soft-shadow);
+        }
+
+        .contact-intro::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(90deg, rgba(255, 250, 242, 0.78), rgba(255, 250, 242, 0.92)),
+                radial-gradient(circle at 8% 18%, rgba(232, 91, 5, 0.16), transparent 26%);
+        }
+
+        .contact-intro > * {
+            position: relative;
+            z-index: 1;
         }
 
         .contact-intro h2 {
+            max-width: 560px;
             margin-bottom: 12px;
+            font-size: clamp(42px, 3.8vw, 62px);
+            line-height: 1;
         }
 
         .contact-intro p {
@@ -1402,34 +1426,8 @@
             }
 
             .about-grid,
-            .locations-grid,
             .contacts-block {
                 grid-template-columns: 1fr;
-            }
-
-            .map-panel {
-                min-height: 460px;
-            }
-
-            .map-place {
-                min-height: 48px;
-                padding: 8px 11px;
-                font-size: 13px;
-            }
-
-            .map-place.ark {
-                top: 48px;
-                left: 34px;
-            }
-
-            .map-place.lyabi {
-                top: 112px;
-                right: 30px;
-            }
-
-            .map-place.kalyan {
-                right: 36px;
-                bottom: 86px;
             }
 
             .footer-main {
@@ -1451,7 +1449,7 @@
             }
         }
 
-        @media (max-width: 1020px) {
+        @media (max-width: 1120px) {
             .page-shell {
                 width: calc(100% - 20px);
                 margin: 10px auto;
@@ -1487,6 +1485,7 @@
             }
 
             .hero {
+                overflow: hidden;
                 min-height: auto;
                 background:
                     linear-gradient(180deg, rgba(255, 248, 236, 0.96) 0%, rgba(255, 248, 236, 0.86) 55%, rgba(255, 248, 236, 0.16) 100%),
@@ -1501,6 +1500,37 @@
                 width: 180px;
                 height: 280px;
                 opacity: 0.46;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-panel {
+                width: min(620px, 100%);
+                min-height: 480px;
+                justify-self: center;
+            }
+
+            .map-place {
+                min-height: 48px;
+                padding: 8px 11px;
+                font-size: 13px;
+            }
+
+            .map-place.ark {
+                top: 48px;
+                left: 34px;
+            }
+
+            .map-place.lyabi {
+                top: 112px;
+                right: 30px;
+            }
+
+            .map-place.kalyan {
+                right: 36px;
+                bottom: 86px;
             }
 
             .quick-panel {
@@ -1553,6 +1583,13 @@
         }
 
         @media (max-width: 760px) {
+            html,
+            body,
+            .page-shell {
+                max-width: 100vw;
+                overflow-x: hidden;
+            }
+
             .inner {
                 width: calc(100% - 30px);
             }
@@ -1587,7 +1624,10 @@
             }
 
             h1 {
-                font-size: clamp(50px, 18vw, 74px);
+                max-width: calc(100vw - 70px) !important;
+                overflow-wrap: normal;
+                font-size: clamp(44px, 13vw, 56px);
+                line-height: 1.02;
             }
 
             h2 {
@@ -1601,18 +1641,30 @@
             }
 
             .hero-content {
+                width: calc(100vw - 70px);
+                max-width: calc(100vw - 70px) !important;
                 padding: 45px 0 300px;
             }
 
             .hero-copy {
+                width: 100%;
+                max-width: calc(100vw - 70px) !important;
                 margin: 26px 0 34px;
                 font-size: 17px;
+                line-height: 1.48;
+            }
+
+            .hero-actions {
+                width: calc(100vw - 70px) !important;
+                max-width: calc(100vw - 70px) !important;
             }
 
             .hero-actions .primary-btn,
             .hero-actions .secondary-btn {
-                width: 100%;
+                width: 100% !important;
                 min-width: 0;
+                max-width: 100% !important;
+                padding-inline: 18px;
             }
 
             .quick-panel,
@@ -1715,8 +1767,12 @@
 
             .contact-intro {
                 min-height: 220px;
-                padding-left: 0;
-                background-size: 300px auto;
+                padding: 28px 24px;
+            }
+
+            .contact-intro h2 {
+                max-width: 100%;
+                font-size: clamp(38px, 10vw, 52px);
             }
 
             .phone-row,
@@ -1749,6 +1805,26 @@
             .qr-promo {
                 grid-template-columns: 1fr;
                 background-size: 210px auto;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .page-shell {
+                width: calc(100vw - 20px) !important;
+                max-width: calc(100vw - 20px) !important;
+            }
+
+            .inner {
+                width: calc(100vw - 50px) !important;
+                max-width: calc(100vw - 50px) !important;
+            }
+
+            .hero-content,
+            h1,
+            .hero-copy,
+            .hero-actions {
+                width: calc(100vw - 70px) !important;
+                max-width: calc(100vw - 70px) !important;
             }
         }
     </style>
