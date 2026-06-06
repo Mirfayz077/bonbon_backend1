@@ -774,98 +774,139 @@
             border: 1px solid var(--line);
             border-radius: 18px;
             background:
-                linear-gradient(rgba(255, 239, 218, 0.78), rgba(255, 239, 218, 0.84)),
-                repeating-linear-gradient(28deg, rgba(197, 115, 53, 0.14) 0 2px, transparent 2px 42px),
-                repeating-linear-gradient(118deg, rgba(197, 115, 53, 0.13) 0 2px, transparent 2px 50px);
+                radial-gradient(circle at 24% 20%, rgba(232, 91, 5, 0.13), transparent 17%),
+                radial-gradient(circle at 73% 30%, rgba(217, 154, 61, 0.14), transparent 16%),
+                radial-gradient(circle at 52% 68%, rgba(232, 91, 5, 0.1), transparent 18%),
+                linear-gradient(145deg, rgba(255, 247, 235, 0.98), rgba(255, 231, 203, 0.88));
             box-shadow: var(--soft-shadow);
         }
 
         .map-panel::before,
-        .map-panel::after,
-        .map-landmark {
+        .map-panel::after {
             content: "";
             position: absolute;
-            width: 210px;
-            height: 145px;
-            opacity: 0.2;
-            background: url("{{ asset('images/logo-bonbon.svg') }}") center / contain no-repeat;
+            pointer-events: none;
+            border-radius: 999px;
+            border: 1px dashed rgba(197, 115, 53, 0.18);
+            opacity: 0.55;
         }
 
         .map-panel::before {
-            top: 35px;
-            left: 38px;
+            top: -68px;
+            left: -58px;
+            width: 220px;
+            height: 220px;
+            border-style: solid;
+            opacity: 0.25;
         }
 
         .map-panel::after {
-            right: 40px;
-            bottom: 48px;
-        }
-
-        .map-landmark {
-            display: block;
+            right: -84px;
+            bottom: -92px;
+            width: 260px;
+            height: 260px;
+            border-style: solid;
             opacity: 0.22;
-            filter: sepia(1) saturate(0.8);
         }
 
-        .map-landmark.ark {
-            top: 58px;
-            left: 54px;
-            width: 165px;
-            height: 112px;
+        .city-route,
+        .city-skyline {
+            position: absolute;
+            pointer-events: none;
         }
 
-        .map-landmark.lyabi {
-            top: 116px;
-            right: 48px;
-            width: 172px;
-            height: 118px;
+        .city-route {
+            inset: 0;
+            z-index: 1;
+            opacity: 0.9;
         }
 
-        .map-landmark.kalyan {
-            right: 58px;
-            bottom: 72px;
-            width: 205px;
-            height: 138px;
+        .city-skyline {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            width: 100%;
+            height: 190px;
+            color: rgba(195, 83, 15, 0.22);
+            opacity: 0.78;
         }
 
         .map-place {
             position: absolute;
-            display: grid;
-            gap: 5px;
-            color: rgba(91, 38, 18, 0.62);
-            font-size: 15px;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 54px;
+            padding: 10px 13px;
+            border: 1px solid rgba(197, 115, 53, 0.2);
+            border-radius: 8px;
+            background: rgba(255, 250, 242, 0.86);
+            color: rgba(91, 38, 18, 0.8);
+            font-size: 14px;
             font-weight: 700;
-            line-height: 1.15;
-            text-align: center;
-            z-index: 1;
+            line-height: 1.2;
+            box-shadow: 0 14px 28px rgba(92, 43, 13, 0.08);
+            backdrop-filter: blur(8px);
         }
 
         .map-place::before {
             content: "";
-            justify-self: center;
-            width: 54px;
-            height: 8px;
+            flex: 0 0 auto;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
-            background: rgba(218, 149, 72, 0.18);
+            background:
+                linear-gradient(rgba(232, 91, 5, 0.14), rgba(232, 91, 5, 0.14)),
+                var(--landmark-icon) center / 24px 24px no-repeat;
         }
 
         .map-place.ark {
-            top: 142px;
-            left: 72px;
+            --landmark-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23c8460c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 52h48'/%3E%3Cpath d='M12 52V25l10-7 10 7 10-7 10 7v27'/%3E%3Cpath d='M22 52V37a10 10 0 0 1 20 0v15'/%3E%3Cpath d='M16 26V15M48 26V15'/%3E%3Cpath d='M12 15h8M44 15h8'/%3E%3C/svg%3E");
+            top: 56px;
+            left: 44px;
         }
 
         .map-place.lyabi {
-            top: 204px;
-            right: 72px;
+            --landmark-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23c8460c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 40c8-8 16-8 24 0s14 8 20 0'/%3E%3Cpath d='M10 50c8-8 16-8 24 0s14 8 20 0'/%3E%3Cpath d='M18 24h28'/%3E%3Cpath d='M22 24v-8h20v8'/%3E%3Cpath d='M16 32h32'/%3E%3C/svg%3E");
+            top: 130px;
+            right: 42px;
         }
 
         .map-place.kalyan {
-            right: 88px;
-            bottom: 64px;
+            --landmark-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='%23c8460c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M26 54h12'/%3E%3Cpath d='M28 54 31 13h2l3 41'/%3E%3Cpath d='M25 20h14M24 30h16M23 40h18'/%3E%3Cpath d='M14 54V38l8-8 8 8v16'/%3E%3Cpath d='M34 54V38l8-8 8 8v16'/%3E%3C/svg%3E");
+            right: 48px;
+            bottom: 82px;
+        }
+
+        .city-caption {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            bottom: 26px;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 13px 16px;
+            border: 1px solid rgba(197, 115, 53, 0.18);
+            border-radius: 8px;
+            background: rgba(255, 250, 242, 0.83);
+            color: var(--brown);
+            font-size: 14px;
+            font-weight: 700;
+            backdrop-filter: blur(8px);
+        }
+
+        .city-caption span:last-child {
+            color: var(--carrot-2);
         }
 
         .pin {
             position: absolute;
+            z-index: 5;
             display: grid;
             justify-items: center;
             gap: 8px;
@@ -873,16 +914,17 @@
             font-size: 15px;
             font-weight: 700;
             text-align: center;
+            transform: translate(-50%, -50%);
         }
 
         .pin.one {
-            top: 32%;
-            left: 50%;
+            top: 43%;
+            left: 56%;
         }
 
         .pin.two {
-            top: 60%;
-            left: 38%;
+            top: 64%;
+            left: 35%;
         }
 
         .pin-marker {
@@ -1366,26 +1408,28 @@
             }
 
             .map-panel {
-                min-height: 420px;
+                min-height: 460px;
             }
 
             .map-place {
+                min-height: 48px;
+                padding: 8px 11px;
                 font-size: 13px;
             }
 
             .map-place.ark {
-                top: 98px;
-                left: 40px;
+                top: 48px;
+                left: 34px;
             }
 
             .map-place.lyabi {
-                top: 142px;
-                right: 38px;
+                top: 112px;
+                right: 30px;
             }
 
             .map-place.kalyan {
-                right: 46px;
-                bottom: 48px;
+                right: 36px;
+                bottom: 86px;
             }
 
             .footer-main {
@@ -1619,38 +1663,48 @@
             }
 
             .map-panel {
-                min-height: 360px;
-            }
-
-            .map-landmark {
-                opacity: 0.14;
-                transform: scale(0.75);
-                transform-origin: center;
+                min-height: 420px;
             }
 
             .pin.one {
-                top: 31%;
-                left: 48%;
+                top: 42%;
+                left: 57%;
             }
 
             .pin.two {
-                top: 58%;
-                left: 34%;
+                top: 62%;
+                left: 35%;
             }
 
             .map-place.ark {
-                top: 64px;
-                left: 22px;
+                top: 30px;
+                left: 16px;
             }
 
             .map-place.lyabi {
-                top: 104px;
-                right: 18px;
+                top: 92px;
+                right: 16px;
             }
 
             .map-place.kalyan {
-                right: 24px;
-                bottom: 34px;
+                right: 18px;
+                bottom: 76px;
+            }
+
+            .map-place::before {
+                width: 28px;
+                height: 28px;
+                background-size: 20px 20px;
+            }
+
+            .city-caption {
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 4px;
+                padding: 10px 12px;
             }
 
             .delivery-bar,
@@ -1919,12 +1973,22 @@
                     </div>
 
                     <a class="map-panel" href="{{ $mapsUrl }}" target="_blank" rel="noopener" aria-label="BonBon xaritasini ochish">
-                        <span class="map-landmark ark" aria-hidden="true"></span>
-                        <span class="map-landmark lyabi" aria-hidden="true"></span>
-                        <span class="map-landmark kalyan" aria-hidden="true"></span>
+                        <svg class="city-route" viewBox="0 0 530 520" aria-hidden="true">
+                            <path d="M74 104 C160 70 195 150 245 188 C300 230 368 178 432 144" fill="none" stroke="rgba(200,70,12,.18)" stroke-width="18" stroke-linecap="round"/>
+                            <path d="M116 338 C180 265 278 355 322 280 C356 222 404 246 458 314" fill="none" stroke="rgba(200,70,12,.16)" stroke-width="14" stroke-linecap="round"/>
+                            <path d="M148 132 C225 190 258 222 296 254 C336 288 356 330 418 390" fill="none" stroke="rgba(200,70,12,.32)" stroke-width="3" stroke-dasharray="9 12" stroke-linecap="round"/>
+                            <circle cx="296" cy="254" r="8" fill="rgba(232,91,5,.28)"/>
+                            <circle cx="188" cy="354" r="8" fill="rgba(232,91,5,.22)"/>
+                            <circle cx="418" cy="390" r="7" fill="rgba(232,91,5,.2)"/>
+                        </svg>
+                        <svg class="city-skyline" viewBox="0 0 530 190" aria-hidden="true">
+                            <path d="M0 181h530" stroke="currentColor" stroke-width="2"/>
+                            <path d="M28 181V122h28v59M42 122v-18M34 104h16M73 181v-42l26-22 26 22v42M86 181v-22a13 13 0 0 1 26 0v22M145 181V92h16v89M142 92h22M153 92V70M191 181v-58l23-20 23 20v58M206 181v-25a12 12 0 0 1 24 0v25M266 181v-72h24v72M278 109V82M270 82h16M318 181v-48l22-18 22 18v48M331 181v-18a10 10 0 0 1 20 0v18M388 181V102h18v79M397 102V76M391 76h12M432 181v-52l28-24 28 24v52M448 181v-23a13 13 0 0 1 26 0v23" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+                            <path d="M70 181c16-40 82-34 94 0M232 181c18-46 92-38 108 0M390 181c14-38 76-34 90 0" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
                         <span class="map-place ark">Ark qal'a</span>
                         <span class="map-place lyabi">Lyabi Hauz</span>
-                        <span class="map-place kalyan">Poi Kalyan</span>
+                        <span class="map-place kalyan">Minorai Kalon</span>
                         <span class="pin one">
                             <span class="pin-marker"><span>B</span></span>
                             <span>BonBon<br>Islom Karimov</span>
@@ -1932,6 +1996,10 @@
                         <span class="pin two">
                             <span class="pin-marker"><span>B</span></span>
                             <span>BonBon<br>filiallari</span>
+                        </span>
+                        <span class="city-caption">
+                            <span>Buxorodagi BonBon manzillari</span>
+                            <span>Xaritada ochish →</span>
                         </span>
                     </a>
                 </div>
